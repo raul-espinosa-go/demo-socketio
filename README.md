@@ -29,7 +29,7 @@ node run start
 
 El servidor quedará corriendo en: http://localhost:3000
 
-#### 🌐 Frontend (Puerto `5173`)
+#### ⚛️ Frontend (Puerto `5173`)
 
 ```bash
 cd chat-frontend
@@ -60,3 +60,19 @@ Eso arrancará:
 La estructura del proyecto es la siguiente:
 
 ![Estructura del proyecto](./images/folders.png)
+
+## 🌐 Funcionamiento de los Sockets
+![Funcionamiento de los sockets](./images/sockets.png)
+
+### 🛠️ Diferentes funciones de socket
+
+| Función                    | ¿A quién se le envía?                                     |
+|---------------------------|------------------------------------------------------------|
+| `socket.emit`             | Solo al cliente o servidor que está conectado por ese socket |
+| `socket.on`               | Escucha los eventos que le llegan al socket                |
+| `io.emit`                 | A **todos los sockets conectados**                        |
+| `socket.broadcast.emit`   | A **todos excepto el socket que emite**                   |
+| `socket.join` / `leave`   | Añadir o quitar sockets de "salas" específicas             |
+| `socket.disconnect`       | Desconectar el socket                                     |
+| `socket.id`               | ID único para ese socket                                  |
+
