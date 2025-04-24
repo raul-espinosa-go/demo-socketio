@@ -1,0 +1,23 @@
+.message {
+  padding: 10px 15px;
+  margin: 6px 10px;
+  border-radius: 18px;
+  max-width: 70%;
+  word-wrap: break-word;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-in-out;
+}
+
+.own {
+  background-color: #dcf8c6;
+  align-self: flex-end;
+  border-bottom-right-radius: 0;
+}
+
+.other {
+  background-color: #e5e5ea;
+  align-self: flex-start;
+  border-bottom-left-radius: 0;
+}

@@ -1,0 +1,20 @@
+services:
+    frontend:
+      image: node:lts-alpine
+      container_name: demo_socketio_frontend
+      working_dir: /app
+      volumes:
+        - ./frontend:/app
+      ports:
+        - "5173:5173"
+      command: sh -c "npm install && npm run dev"
+
+    backend:
+      container_name: demo_socketio_server
+      image: node:lts-bullseye-slim
+      volumes:
+        - ./backend:/usr/src/app
+      working_dir: /usr/src/app
+      ports:
+        - 3000:3000
+      command: sh -c "npm install && npm run docker"
