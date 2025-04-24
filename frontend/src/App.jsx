@@ -13,12 +13,12 @@ function App() {
   useEffect(() => {
     if (!socket) return;
 
-    socket.on("chat:message", (msg) => {
+    socket.on("server:chat:message", (msg) => {
       setMessages((prev) => [...prev, msg]);
     });
 
     return () => {
-      socket.off("chat:message"); // Limpieza por si acaso
+      socket.off("server:chat:message"); // Limpieza por si acaso
     };
   }, [socket]);
 
@@ -28,7 +28,7 @@ function App() {
         content: input,
         sender: userId,
       };
-      socket.emit("chat:message", msg);
+      socket.emit("front:chat:message", msg);
       setInput("");
     }
   };
