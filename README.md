@@ -24,7 +24,7 @@ Este es un proyecto de demo para un chat en tiempo real utilizando **React** en 
 ```bash
 cd backend
 npm install
-node run start
+npm run start
 ```
 
 El servidor quedará corriendo en: http://localhost:3000
